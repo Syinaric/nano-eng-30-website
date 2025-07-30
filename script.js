@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navButtons.forEach(button => {
         button.addEventListener('mouseenter', function() {
-            // Hover effects only (no audio)
+            // Hover effects only (no audio) - updated
         });
     });
     
