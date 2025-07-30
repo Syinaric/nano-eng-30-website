@@ -17,7 +17,6 @@ A dark-themed, full-screen landing page for the Nanotechnology Engineering Class
 ### Interactive Elements
 - **Navigation Buttons**: "Class Discord" and "Class Profile" with hover animations
 - **Hover Effects**: Glow, scale, and underline animations
-- **Sound Effects**: Subtle hover and click sounds using Web Audio API
 - **Mouse Trail**: Cyan particle trail following cursor movement
 - **Particle System**: Animated particles around the nano icon
 
@@ -82,7 +81,6 @@ background-image: url('YOUR_IMAGE_URL_HERE');
 ## Performance Features
 
 - **Optimized Animations**: Uses CSS transforms and opacity for smooth performance
-- **Audio Context**: Initialized only on user interaction to comply with browser policies
 - **Efficient Rendering**: Minimal DOM manipulation and optimized event handling
 - **Responsive Images**: Background image scales appropriately for all devices
 

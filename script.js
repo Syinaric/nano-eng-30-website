@@ -1,67 +1,13 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Create audio context for hover sounds
-    let audioContext;
-    let oscillator;
-    
-    // Initialize audio context on first user interaction
-    function initAudio() {
-        if (!audioContext) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        }
-    }
-    
-    // Create hover sound effect
-    function playHoverSound() {
-        if (!audioContext) return;
-        
-        oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-        oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
-        
-        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-        
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.1);
-    }
-    
     // Add hover effects to navigation buttons
     const navButtons = document.querySelectorAll('.nav-button');
     
     navButtons.forEach(button => {
         button.addEventListener('mouseenter', function() {
-            playHoverSound();
-            
-            // Add click sound effect
-            button.addEventListener('click', function() {
-                if (audioContext) {
-                    const clickOsc = audioContext.createOscillator();
-                    const clickGain = audioContext.createGain();
-                    
-                    clickOsc.connect(clickGain);
-                    clickGain.connect(audioContext.destination);
-                    
-                    clickOsc.frequency.setValueAtTime(1000, audioContext.currentTime);
-                    clickOsc.frequency.exponentialRampToValueAtTime(2000, audioContext.currentTime + 0.05);
-                    
-                    clickGain.gain.setValueAtTime(0.2, audioContext.currentTime);
-                    clickGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
-                    
-                    clickOsc.start(audioContext.currentTime);
-                    clickOsc.stop(audioContext.currentTime + 0.05);
-                }
-            });
+            // Hover effects only (no audio)
         });
-        
-        // Initialize audio on first interaction
-        button.addEventListener('mouseenter', initAudio, { once: true });
     });
     
     // Parallax effect for background
