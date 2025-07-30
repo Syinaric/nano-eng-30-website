@@ -100,4 +100,4 @@ background-image: url('YOUR_IMAGE_URL_HERE');
 
 ---
 
-*Built for the Nanotechnology Engineering Class of 2030 at the University of Waterloo* 
+*Built for the Nanotechnology Engineering Class of 2030 at the University of Waterloo*
