@@ -158,6 +158,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500 + (index * 300));
     });
     
+    // Custom cursor tracking
+    const customCursor = document.querySelector('.custom-cursor');
+    
+    document.addEventListener('mousemove', (e) => {
+        if (customCursor) {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        }
+    });
+    
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        if (customCursor) {
+            customCursor.style.display = 'none';
+        }
+    });
+    
+    // Show cursor when entering window
+    document.addEventListener('mouseenter', () => {
+        if (customCursor) {
+            customCursor.style.display = 'block';
+        }
+    });
+    
     // Add mouse trail effect
     let mouseTrail = [];
     const maxTrailLength = 10;
